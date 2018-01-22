@@ -4,6 +4,8 @@
 
 [链接](http://www.rolexawards.com/40/map)
 
+[DEMO](http://htmlpreview.github.io/?https://github.com/NBSeven/threeJs/blob/master/realmap.html)
+
 看了一下其网站的脚本文件之后大致了解了这个网站是基于three.js做出来的。
 
 [three.js官网](https://threejs.org/)
