@@ -24,14 +24,14 @@ git会记录一个项目所有的历史修改，所以通常会很大。有时�
 ```
   <script src="./three.js"></script>
   <script src="./tween.min.js"></script>
-  <script src="./TrackballControls.js"></script> //控制器有好几种，我的和例子中的控制器并不一样 例子里的是OrbitControls.js 我把文件也给放上来了
+  <script src="./TrackballControls.js"></script> //控制器有好几种，我的和例子中的控制器并不一样 例子里的是OrbitControls.js 我把文件也给放上来了
   <script src="./CSS3DRenderer.js"></script>
 
 ```
 除了three.js以外还有tween.js 这是一个JS动画库，在这里不做讨论。
 TrackballControls和CSS3DRenderer是和threejs相关的。
 TrackballControls是一个控制器，也就是能让物体位置跟着鼠标的移动随时变化。
-CSS3DRenderer 作用是能让dom元素继承 THREE.Object3D的方法和属性。
+CSS3DRenderer 作用是能让dom元素继承 THREE.Object3D的方法和属性。
 ```
  var camera, scene, renderer;//摄像头，//场景 //渲染器
  var controls;// 控制器
@@ -60,24 +60,24 @@ CSS3DRenderer 作用是能让dom元素继承 THREE.Object3D的方法和属性�
       './meinv.jpeg',
       './meinv.jpeg'
     ]//元素数组
- var objects = [];//存放3D元素的数组
- var newobjs = [];//存放3D对象的数组（每个对象都带有不同的位置，具体看下面的代码） 
-    init();// 初始化
+ var objects = [];//存放3D元素的数组
+ var newobjs = [];//存放3D对象的数组（每个对象都带有不同的位置，具体看下面的代码） 
+    init();// 初始化
     animate();// 动画渲染
 
     function init() {
       camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
-      camera.position.z = 3000;//摄像机位置必须要设置，否则会出现转不动的情况
+      camera.position.z = 3000;//摄像机位置必须要设置，否则会出现转不动的情况
       scene = new THREE.Scene();
       imagesUrl.forEach(function (url, index) {
         let element = document.createElement('img');
         element.src = url;
         element.className = 'test';
         let object = new THREE.CSS3DObject(element);//把img元素转换成3d元素
-        object.position.x = Math.random() * 4000 - 2000;// 一开始元素的随机位置 （至于这些参数怎么取值，我也不太懂就按源码的来了）
+        object.position.x = Math.random() * 4000 - 2000;// 一开始元素的随机位置 （至于这些参数怎么取值，我也不太懂就按源码的来了）
         object.position.y = Math.random() * 4000 - 2000;
         object.position.z = Math.random() * 4000 - 2000;
-        scene.add(object);//在场景中添加这些对象
+        scene.add(object);//在场景中添加这些对象
         objects.push(object);
       })
       var vector = new THREE.Vector3(); //创建一个三维向量
@@ -94,26 +94,26 @@ CSS3DRenderer 作用是能让dom元素继承 THREE.Object3D的方法和属性�
 
         object.position.setFromSpherical(spherical);
 
-        vector.copy(object.position).multiplyScalar(2);// 不挣扎了 ，不懂图形学得我 看了也是不明白~
+        vector.copy(object.position).multiplyScalar(2);//不挣扎了 ，不懂图形学得我 看了也是不明白~
 
         object.lookAt(vector);
 
-        newobjs.push(object); //把构建球形对象的基本对象放到新数组里
+        newobjs.push(object); //把构建球形对象的基本对象放到新数组里
 
       }
 
 
       renderer = new THREE.CSS3DRenderer();// 创建渲染器
-      renderer.setSize(window.innerWidth, window.innerHeight);//设置渲染的区域
+      renderer.setSize(window.innerWidth, window.innerHeight);//设置渲染的区域
       renderer.domElement.style.position = 'absolute';
-      document.getElementById('container').appendChild(renderer.domElement);//把渲染器添加到页面中
-      controls = new THREE.TrackballControls(camera, renderer.domElement);//创建控制器，随着摄像机和渲染器？。。。
+      document.getElementById('container').appendChild(renderer.domElement);//把渲染器添加到页面中
+      controls = new THREE.TrackballControls(camera, renderer.domElement);//创建控制器，随着摄像机和渲染器？。。。
       controls.rotateSpeed = 0.5;
       controls.minDistance = 500;//控制器的最小距离
       controls.maxDistance = 6000;//控制器的最大距离
-      controls.addEventListener('change', render);//添加监听函数，控制器改变时调用reder函数
-      transform(newobjs, 2000);//执行3D对象的位置变化
-      window.addEventListener('resize', onWindowResize, false);// 窗口变化时执行onWindowResize函数
+      controls.addEventListener('change', render);//添加监听函数，控制器改变时调用reder函数
+      transform(newobjs, 2000);//执行3D对象的位置变化
+      window.addEventListener('resize', onWindowResize, false);// 窗口变化时执行onWindowResize函数
 
 
     function transform(targets, duration) {
@@ -181,5 +181,5 @@ CSS3DRenderer 作用是能让dom元素继承 THREE.Object3D的方法和属性�
   }
 ```
 这里也有一个很好的教程
-[教程链接](https://www.cnblogs.com/createGod/p/7004428.html)
-PS：建议用最新的three.js不同版本的相关文件可能会造成一些问题。
+[教程链接](https://www.cnblogs.com/createGod/p/7004428.html)
+PS：建议用最新的three.js不同版本的相关文件可能会造成一些问题。
