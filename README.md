@@ -1,4 +1,5 @@
-#three.js实践
+# three.js实践
+
 前一阵子看到一个网站非常的酷炫，想估摸着自己也仿一个出来。
 [链接](http://www.rolexawards.com/40/map)
 看了一下其网站的脚本文件之后大致了解了这个网站是基于three.js做出来的。
@@ -7,7 +8,7 @@
 如果是要做特效的话建议去看官网里的examples每个例子都可以预览且在github有源码。
 接着我就开始看three.js的文档了，我只看了入门介绍，大致介绍了在3d环境中有scene(场景)、camera(摄像头)、renderer(渲染器)以及obj(3D物体)。
 曾经用C4D做过一些3D动画所以还算是了解这些东西。不过很多细节上的东西也不是太懂，比如说
-` new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );`
+` new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); `
 我知道最后两个参数是近裁剪面（near clipping plane） 和 远裁剪面（far clipping plane），也可以理解这是一个椎体，只不过这个参数值我怎么变都是一样啊 - -。。。资料少得可怜，希望有人能够指点一下  0 0 
 还是进入正题吧，当我在看three.js的example时 看到一个[元素周期表](https://threejs.org/examples/#css3d_periodictable)，这尼玛不就是上面那网站的原型嘛 只不过位置不一样罢了。
 随后赶紧clone了three.js仓库里的example文件夹。
@@ -181,4 +182,4 @@ CSS3DRenderer 作用是能让dom元素继承 THREE.Object3D的方法和属性�
 ```
 这里也有一个很好的教程
 [教程链接](https://www.cnblogs.com/createGod/p/7004428.html)
-PS：建议用最新的three.js 不同版本的相关文件可能会造成一些问题。
+PS：建议用最新的three.js不同版本的相关文件可能会造成一些问题。
