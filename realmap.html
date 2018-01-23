@@ -322,7 +322,8 @@
     var appColse = document.getElementById('closes')
     appColse.onclick = function () {
       var side = document.getElementById('sides')
-      side.style.transform = 'translateX(345px)'
+      var sideW = side.style.width;
+      side.style.transform = 'translateX('+sideW+'px)'
     }
   </script>
 </body>
