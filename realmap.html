@@ -8,8 +8,10 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css">
   <style>
-	  body{
-	  overflow:hidden}  
+    body {
+      overflow: hidden
+    }
+
     .test {
       width: 15%;
       z-index: 1000
@@ -21,13 +23,11 @@
 
     .side {
       min-height: 100vh;
-      width: 24vw;
-      min-width: 345px;
       background-color: rgba(0, 0, 0, .8);
       position: absolute;
       right: 0;
       top: 0;
-      transition: transform 1s;
+      transition: right 1s;
     }
 
     .side>.close {
@@ -91,7 +91,8 @@
 <body>
   <div id="container">
   </div>
-  <aside class="side" id="sides">
+  <aside class="side" id="sides" style="
+  width: 345px;">
     <div class="close" id="closes">×</div>
     <img src="./meinv.jpeg" alt="">
     <div class="details">
@@ -172,7 +173,7 @@
         element.className = 'test';
         element.onclick = function () {
           var side = document.getElementById('sides')
-          side.style.transform = 'translateX(0px)'
+          side.style.right = 0
         }
         let object = new THREE.CSS3DObject(element);
         object.position.x = Math.random() * 4000 - 2000;
@@ -203,17 +204,17 @@
 
       }
 
-      	// for ( var i = 0; i < objects.length; i ++ ) {
+      // for ( var i = 0; i < objects.length; i ++ ) {
 
-				// 	var object = new THREE.Object3D();
+      // 	var object = new THREE.Object3D();
 
-				// 	object.position.x = ( ( i % 5 ) * 400 ) - 800;
-				// 	object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
-				// 	object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
+      // 	object.position.x = ( ( i % 5 ) * 400 ) - 800;
+      // 	object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
+      // 	object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
 
-				// 	newobjs.push( object );
+      // 	newobjs.push( object );
 
-				// }
+      // }
 
       // var vector = new THREE.Vector3();
       // var cylindrical = new THREE.Cylindrical();
@@ -322,8 +323,9 @@
     var appColse = document.getElementById('closes')
     appColse.onclick = function () {
       var side = document.getElementById('sides')
-      var sideW = side.style.width;
-      side.style.transform = 'translateX('+sideW+'px)'
+      var sideW = side.style.width
+      console.log(sideW)
+      side.style.right = '-345px'
     }
   </script>
 </body>
