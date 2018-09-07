@@ -4,7 +4,7 @@
 
 [网站链接](http://www.rolexawards.com/40/map)
 
-[我的链接](http://htmlpreview.github.io/?https://github.com/NBSeven/threeJs/blob/master/realmap.html)
+[我的链接](https://htmlpreview.github.io/?https://github.com/NBSeven/threeJs/blob/master/realmap.html)
 
 [three.js官网](https://threejs.org/)
 
